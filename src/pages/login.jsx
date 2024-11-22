@@ -7,8 +7,7 @@ import { Container,
     TextField, 
     FormControlLabel, 
     Button,
-    Checkbox,
-    InputLabel } from "@mui/material";
+    Checkbox} from "@mui/material";
 import "../styles/login.css";
 
 
@@ -20,9 +19,11 @@ function Login() {
             height: "100vh",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",}}
+            justifyContent: "center",
+            flexDirection: "column",
+            justifyContent: "space-between",}}
         >
-            <Paper elevation={5} sx={{marginTop:8 , padding: 4, px: 5}}>
+            <Paper elevation={5} sx={{marginTop:10 , padding: 4, px: 5}}>
             <Avatar
                 sx={{
                     mx: "auto",
@@ -42,9 +43,6 @@ function Login() {
             Enter your username and password to continue
             </Typography>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            {/* <InputLabel htmlFor="username" sx={{ mb: 0.5, fontSize: "0.9rem" }}>
-                Username
-            </InputLabel> */}
             <TextField
                 required
                 id="outlined-required"
@@ -71,20 +69,6 @@ function Login() {
                   }}
                   type="password"
                 />
-            {/* <TextField
-                label="Email address"
-                placeholder="Enter your email"
-                fullWidth
-                required
-                variant="outlined" 
-                margin="normal"
-            />
-            <TextField
-                placeholder="Enter password"
-                fullWidth
-                required
-                type="password"
-            /> */}
             <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
@@ -95,6 +79,29 @@ function Login() {
             </Button>
             </Box>
             </Paper>
+        <Box
+            component="footer"
+            sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: 2,
+                width: "100%",
+                mt: "auto",
+            }}
+            >
+                <Typography variant="caption" color="text.secondary">
+                    © Logoipsum Inc. All rights reserved
+                </Typography>
+                <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => console.log("contact support click isnt handled yet :/")}
+                >
+                    Contact Support
+                </Typography>
+            </Box>
         </Container>
     );
     };
